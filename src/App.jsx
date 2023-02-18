@@ -10,6 +10,7 @@ import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
 import LoginPage from "./pages/LoginPage";
 import Menu from "./components/Menu";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -17,21 +18,43 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
 
   return (
-      <Router>
-        <MainLayout isDarkMode={isDarkMode} isLoggedIn={isLoggedIn} currentUser={currentUser} setCurrentUser={setCurrentUser}>
-          <Menu />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/posts" element={currentUser ? <PostsPage /> : <LoginPage setCurrentUser={setCurrentUser} />} />
-              <Route path="/albums" element={<AlbumsPage />} />
-              <Route path="/todos" element={<TodosPage />} />
-              <Route path="/comments" element={<CommentsPage />} />
-              <Route path="/users" element={<UsersPage />} />
-              <Route path="/photos" element={<PhotosPage />} />
-              <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser} />} />
-            </Routes>
-        </MainLayout>
-      </Router>
+    <Router>
+      <MainLayout
+        isDarkMode={isDarkMode}
+        isLoggedIn={isLoggedIn}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+      >
+        <Menu />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/posts"
+            element={
+              <ProtectedRoute currentUser={currentUser}>
+                <PostsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/albums" element={<AlbumsPage />} />
+          <Route
+            path="/todos"
+            element={
+              <ProtectedRoute currentUser={currentUser}>
+                <TodosPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="/comments" element={<CommentsPage />} />
+          <Route path="/users" element={<UsersPage />} />
+          <Route path="/photos" element={<PhotosPage />} />
+          <Route
+            path="/login"
+            element={<LoginPage setCurrentUser={setCurrentUser} />}
+          />
+        </Routes>
+      </MainLayout>
+    </Router>
   );
 }
 

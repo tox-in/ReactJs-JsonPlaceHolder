@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchUserById } from "../Services/api";
+import { useAuth } from "../components/AuthContext";
 
 const LoginPage = ({ setCurrentUser }) => {
   const [userId, setUserId] = useState("");
@@ -8,6 +9,8 @@ const LoginPage = ({ setCurrentUser }) => {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
+
+  const { login } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -24,9 +27,7 @@ const LoginPage = ({ setCurrentUser }) => {
 
     try {
       const user = await fetchUserById(id);
-
-      setCurrentUser(user);
-      localStorage.setItem("user", JSON.stringify(user));
+      login(user);
       navigate("/posts");
     } catch (err) {
       setError(`User doesn't exist. ${err.message}`);
