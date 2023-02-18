@@ -6,6 +6,16 @@ export const fetchUsers = async () => {
     return response.json();
 };
 
+export const fetchUserById = async (id) => {
+  const response = await fetch(`${BASE_URL}/users`);
+  if (!response.ok) throw new Error('Network response was not ok');
+  const users = await response.json();
+  const userId = parseInt(id, 10);
+  const user = users.find((u) => u.id === userId);
+  if (!user) throw new Error(`User with id ${id} not found`);
+  return user;
+};
+
 export const fetchTodos = async () => {
     const response = await fetch(`${BASE_URL}/todos`);
     if (!response.ok) throw new Error('Network response was not ok');

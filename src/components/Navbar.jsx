@@ -4,6 +4,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import { Link } from "react-router-dom";
 
 const Navbar = ({ isDarkMode, isLoggedIn }) => {
+  
   return (
     <nav className="w-full h-22 flex items-center justify-between px-6 bg-accent shadow border-solid border-b-1 border-b-amber-700 rounded-b-lg mb-4">
       <Link to="/">
