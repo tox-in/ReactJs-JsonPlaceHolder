@@ -11,11 +11,13 @@ import PostsPage from "./pages/PostsPage";
 import LoginPage from "./pages/LoginPage";
 import Menu from "./components/Menu";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from "./components/AuthContext";
+
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const {currentUser, login, logout, setCurrentUser} = useAuth();
+  const isLoggedIn = !!currentUser;
 
   return (
     <Router>
@@ -23,7 +25,6 @@ function App() {
         isDarkMode={isDarkMode}
         isLoggedIn={isLoggedIn}
         currentUser={currentUser}
-        setCurrentUser={setCurrentUser}
       >
         <Menu />
         <Routes>
@@ -50,7 +51,7 @@ function App() {
           <Route path="/photos" element={<PhotosPage />} />
           <Route
             path="/login"
-            element={<LoginPage setCurrentUser={setCurrentUser} setIsLoggedIn={setIsLoggedIn} />}
+            element={<LoginPage login={login} isLoggedIn={isLoggedIn} />}
           />
         </Routes>
       </MainLayout>

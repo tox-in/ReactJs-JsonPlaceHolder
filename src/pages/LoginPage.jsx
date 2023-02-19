@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchUserById } from "../Services/api";
 import { useAuth } from "../components/AuthContext";
 
-const LoginPage = ({ setCurrentUser, setIsLoggedIn }) => {
+const LoginPage = ({isLoggedIn}) => {
   const [userId, setUserId] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -28,7 +28,6 @@ const LoginPage = ({ setCurrentUser, setIsLoggedIn }) => {
     try {
       const user = await fetchUserById(id);
       login(user);
-      setIsLoggedIn(true);
       navigate("/posts");
     } catch (err) {
       setError(`User doesn't exist. ${err.message}`);
@@ -36,6 +35,10 @@ const LoginPage = ({ setCurrentUser, setIsLoggedIn }) => {
       setSubmitting(false);
     }
   };
+
+  if(isLoggedIn) {
+    navigate("/posts");
+  }
 
   if (submitting) {
     return (
