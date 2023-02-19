@@ -50,7 +50,7 @@ function App() {
           <Route path="/photos" element={<PhotosPage />} />
           <Route
             path="/login"
-            element={<LoginPage setCurrentUser={setCurrentUser} />}
+            element={<LoginPage setCurrentUser={setCurrentUser} setIsLoggedIn={setIsLoggedIn} />}
           />
         </Routes>
       </MainLayout>
