@@ -5,17 +5,11 @@ import Photos from './Data/Photos';
 import Albums from './Data/Albums';
 import Comments from './Data/Comments';
 import Navbar from './components/Navbar';
+import Posts from './Data/Posts';
 
 function App() {
   return (
     <>
-      {/* <div className="card"> */}
-        {/* <Todos /> */}
-        {/* <Users /> */}
-        {/* <Photos /> */}
-        {/* <Albums /> */}
-        {/* <Comments />  */}
-      {/* </div> */}
       <Router>
         <Navbar />
       </Router>
@@ -24,3 +18,13 @@ function App() {
 }
 
 export default App
+
+
+{/* <div className="card"> */}
+        {/* <Todos /> */}
+        {/* <Users /> */}
+        {/* <Photos /> */}
+        {/* <Albums /> */}
+        {/* <Comments />  */}
+        {/* <Posts /> */}
+      {/* </div> */}
