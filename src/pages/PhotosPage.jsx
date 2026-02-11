@@ -1,8 +1,8 @@
-import React from 'react'
+import Photos from './../Data/Photos';
 
 const PhotosPage = () => {
   return (
-    <div>PhotosPage</div>
+    <div><Photos /></div>
   )
 }
 

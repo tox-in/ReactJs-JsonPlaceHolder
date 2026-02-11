@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { fetchAlbums } from "../Services/api";
+import useFetch from "../Hooks/useFetch";
 
 const Albums = () => {
-  const [albums, setAlbums] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {data: albums, loading, error} = useFetch(fetchAlbums);
 
-  useEffect(() => {
-    fetchAlbums()
-      .then(setAlbums)
-      .finally(() => setLoading(false));
-  }, []);
 
   if (loading) return <p>Loading Albums...</p>
+  if (error) return <p>Error: {error}</p>
 
 
   return <div>

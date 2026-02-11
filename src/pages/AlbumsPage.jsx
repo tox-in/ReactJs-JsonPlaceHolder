@@ -1,8 +1,8 @@
-import React from 'react'
+import Albums from './../Data/Albums';
 
 const AlbumsPage = () => {
   return (
-    <div>AlbumsPage</div>
+    <div><Albums /></div>
   )
 }
 

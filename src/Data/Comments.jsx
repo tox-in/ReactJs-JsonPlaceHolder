@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import useFetch from '../Hooks/useFetch';
 import { fetchComments } from '../Services/api';
 
 const Comments = () => {
-    const [comments, setComments] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        fetchComments().then(setComments).finally(() => setLoading(false));
-    }, []);
+    const {data: comments, loading, error} = useFetch(fetchComments);
 
     if(loading) return <p>Loading Comments ...</p>
+    if(error) return <p>Error loading comments: {error.message}</p>
   return (
     <div>
         {

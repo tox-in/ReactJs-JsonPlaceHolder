@@ -1,30 +1,30 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Todos from './Data/Todos';
-import Users from './Data/Users';
-import Photos from './Data/Photos';
-import Albums from './Data/Albums';
-import Comments from './Data/Comments';
 import Navbar from './components/Navbar';
-import Posts from './Data/Posts';
+import Home from './pages/Home';
+import PhotosPage from './pages/PhotosPage';
+import AlbumsPage from './pages/AlbumsPage';
+import TodosPage from './pages/TodosPage';
+import CommentsPage from './pages/CommentsPage';
+import UsersPage from './pages/UsersPage';
+import PostsPage from './pages/PostsPage';
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path="/posts" element={<PostsPage />} />
+          <Route path="/albums" element={<AlbumsPage />} />
+          <Route path="/todos" element={<TodosPage />} />
+          <Route path="/comments" element={<CommentsPage />} />
+          <Route path="/users" element={<UsersPage />} />
+          <Route path="/photos" element={<PhotosPage />} />
+        </Routes>
       </Router>
     </>
   )
 }
 
 export default App
-
-
-{/* <div className="card"> */}
-        {/* <Todos /> */}
-        {/* <Users /> */}
-        {/* <Photos /> */}
-        {/* <Albums /> */}
-        {/* <Comments />  */}
-        {/* <Posts /> */}
-      {/* </div> */}

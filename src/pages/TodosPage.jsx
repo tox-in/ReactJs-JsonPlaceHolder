@@ -1,8 +1,8 @@
-import React from 'react'
 
+import Todos from './../Data/Todos';
 const TodosPage = () => {
   return (
-    <div>TodosPage</div>
+    <div><Todos /></div>
   )
 }
 

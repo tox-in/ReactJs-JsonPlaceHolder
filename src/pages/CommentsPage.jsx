@@ -1,8 +1,8 @@
-import React from 'react'
+import Comments from './../Data/Comments';
 
 const CommentsPage = () => {
   return (
-    <div>CommentsPage</div>
+    <div><Comments /></div>
   )
 }
 

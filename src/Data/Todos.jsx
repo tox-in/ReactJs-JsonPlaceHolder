@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { fetchTodos } from '../Services/api';
+import useFetch from './../Hooks/useFetch';
 
 const Todos = () => {
-  const [todos, setTodos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const {data: todos, loading, error} = useFetch(fetchTodos);
 
-  useEffect(() => {
-    fetchTodos().then(setTodos).finally(() => setLoading(false));
-  }, []);
 
   if (loading) return <p>Loading todos...</p>
+  if (error) return <p>Error: {error}</p>
 
   return (
     <div className='todo-grid'>

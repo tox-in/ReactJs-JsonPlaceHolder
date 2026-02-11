@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { fetchPosts } from '../Services/api';
+import useFetch from '../Hooks/useFetch';
 
 const Posts = () => {
-    const [posts, setPosts] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const { data: posts, loading, error } = useFetch(fetchPosts);
 
-    useEffect(() => {
-        fetchPosts().then(setPosts).finally(() => setLoading(false));
-    }, []);
-
-    if(loading) return <p>fetching Posts ...</p>
+    if (loading) return <p>Loading Photos ...</p>
+    if (error) return <p>Error: {error}</p>
 
   return (
     <div>

@@ -1,8 +1,8 @@
-import React from 'react'
+import Posts from '../Data/Posts'
 
 const PostsPage = () => {
   return (
-    <div>PostsPage</div>
+    <div><Posts /></div>
   )
 }
 
