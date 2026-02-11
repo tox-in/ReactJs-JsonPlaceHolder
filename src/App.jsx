@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Menu from './components/Menu';
 import Home from './pages/Home';
 import PhotosPage from './pages/PhotosPage';
 import AlbumsPage from './pages/AlbumsPage';
@@ -10,8 +11,9 @@ import PostsPage from './pages/PostsPage';
 
 function App() {
   return (
-    <>
+    <div className="flex h-screen bg-gray-100">
       <Router>
+        <Menu />
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -23,7 +25,7 @@ function App() {
           <Route path="/photos" element={<PhotosPage />} />
         </Routes>
       </Router>
-    </>
+    </div>
   )
 }
 
