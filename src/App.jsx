@@ -8,6 +8,7 @@ import TodosPage from "./pages/TodosPage";
 import CommentsPage from "./pages/CommentsPage";
 import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
+import Menu from "./components/Menu";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -16,6 +17,7 @@ function App() {
   return (
       <Router>
         <MainLayout isDarkMode={isDarkMode} isLoggedIn={isLoggedIn}>
+          <Menu />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/posts" element={<PostsPage />} />

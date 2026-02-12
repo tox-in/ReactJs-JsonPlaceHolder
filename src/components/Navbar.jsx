@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ isDarkMode, isLoggedIn }) => {
   return (
-    <nav className="w-full h-14 flex items-center justify-between px-6 bg-accent shadow">
+    <nav className="w-full h-22 flex items-center justify-between px-6 bg-accent shadow border-solid border-b-1 border-b-amber-700 rounded-b-lg mb-4">
       <Link to="/">
         <h1 className="font-bold text-[#494949]">Json Placeholder</h1>
       </Link>
@@ -19,7 +19,7 @@ const Navbar = ({ isDarkMode, isLoggedIn }) => {
           <PersonOutlineOutlinedIcon className="w-6 h-6 ml-8 text-[#494949]" />
         ) : (
           <Link to="/login">
-            <p className="font-kaushan w-6 h-6 ml-8 text-[#494949]">Login</p>
+            <p className="font-kaushan w-12 h-6 ml-8 text-[#494949] bg-light">Login</p>
           </Link>
         )}
       </div>
