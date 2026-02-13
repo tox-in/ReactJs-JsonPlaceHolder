@@ -7,7 +7,7 @@ const Navbar = ({ isDarkMode, isLoggedIn }) => {
   return (
     <nav className="w-full h-22 flex items-center justify-between px-6 bg-accent shadow border-solid border-b-1 border-b-amber-700 rounded-b-lg mb-4">
       <Link to="/">
-        <h1 className="font-bold text-[#494949]">Json Placeholder</h1>
+        <h1 className="font-bold text-[#494949] text-md md:text-lg lg:text-xl">Json Placeholder</h1>
       </Link>
       <div className="flex items-center gap-6 pr-4 md:pr-16 lg:pr-24">
         {isDarkMode ? (
@@ -18,8 +18,8 @@ const Navbar = ({ isDarkMode, isLoggedIn }) => {
         {isLoggedIn ? (
           <PersonOutlineOutlinedIcon className="w-6 h-6 ml-8 text-[#494949]" />
         ) : (
-          <Link to="/login">
-            <p className="font-kaushan w-12 h-6 ml-8 text-[#494949] bg-light">Login</p>
+          <Link to="/login" className="font-kaushan ml-2 md:ml-6 lg:ml-8 px-6 py-2 bg-light text-xl text-[#494949] rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center">
+            Login
           </Link>
         )}
       </div>

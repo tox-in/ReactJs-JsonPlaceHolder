@@ -10,7 +10,7 @@ const Todos = () => {
   if (error) return <p>Error: {error}</p>
 
   return (
-    <div className='todo-grid'>
+    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
       {todos.map((todo) => (
         <div key={todo.id} className="todo-card">
           <h3>{todo.title}</h3>
