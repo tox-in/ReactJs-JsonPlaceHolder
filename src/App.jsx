@@ -11,7 +11,7 @@ import PostsPage from "./pages/PostsPage";
 import Menu from "./components/Menu";
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
