@@ -21,3 +21,7 @@
     to { height: 0; }
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
