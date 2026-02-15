@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { fetchUsers } from '../Services/api';
 import { Link } from 'react-router-dom'; // Prepare for clickability
 
@@ -27,11 +28,11 @@ const Users = () => {
                         <div className="relative z-10">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
-                                    {user.name.charAt(0)}
+                                    <AccountCircleOutlinedIcon />
                                 </div>
                                 <div>
                                     <h2 className="text-xl font-bold text-[#494949] dark:text-white">{user.name}</h2>
-                                    <span className="text-sm text-accent">@{user.username}</span>
+                                    <span className="text-sm text-accent">{user.name}</span>
                                 </div>
                             </div>
 
