@@ -14,30 +14,28 @@ const Users = () => {
     if (loading) return <div className='text-center p-10 animate-pulse text-accent font-bold'>Gathering Users...</div>
 
     return (
-        <div className="p-4">
+        <div className="p-4 pb-32">
             <h1 className="text-2xl font-bold mb-8 text-[#494949]">Community Members</h1>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {users.map((user) => (
                     <div 
                         key={user.id} 
-                        className="group relative bg-white p-6 rounded-3xl shadow-sm border border-light transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-accent cursor-pointer overflow-hidden"
+                        className="group bg-white p-6 rounded-3xl shadow-sm border border-light transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-accent cursor-pointer overflow-hidden"
                     >
-                        <div className="absolute -right-4 -top-4 w-24 h-24 bg-accent/10 rounded-full transition-transform group-hover:scale-150" />
-
-                        <div className="relative z-10">
+                        <div className="z-10">
                             <div className="flex items-center gap-4 mb-4">
                                 <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold text-lg">
                                     <AccountCircleOutlinedIcon />
                                 </div>
                                 <div>
-                                    <h2 className="text-xl font-bold text-[#494949] dark:text-white">{user.name}</h2>
+                                    <h2 className="text-xl font-bold text-[#494949] dark:text-white justify-center items-center">{user.name}</h2>
                                     <span className="text-sm text-accent">{user.name}</span>
                                 </div>
                             </div>
 
                             <div className="space-y-2 border-t border-light pt-4 mt-4">
-                                <p className="text-sm text-gray-500 flex items-center gap-2">
+                                <p className="text-sm text-gray-500 fle flex-row items-center gap-2">
                                     <span className="font-bold">📧</span> {user.email.toLowerCase()}
                                 </p>
                                 <p className="text-sm text-gray-400 italic">

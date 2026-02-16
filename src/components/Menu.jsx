@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const Menu = () => {
   return (
-      <nav className="h-10 fixed bottom-8 md:w-full">
+      <nav className="h-10 fixed bottom-8 md:inset-x-0 z-9999">
         <div className="w-fit py-1 bg-light backdrop-blur-md rounded-full mx-auto flex items-center justify-center gap-2">
         {/* <Link to="/" className="uppercase font-bold p-2 px-4">Home</Link> */}
         <Link to="/posts" className="uppercase font-bold p-2 px-4 text-sm">Posts</Link>
