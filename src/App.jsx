@@ -28,6 +28,7 @@ function App() {
               <Route path="/comments" element={<CommentsPage />} />
               <Route path="/users" element={<UsersPage />} />
               <Route path="/photos" element={<PhotosPage />} />
+              <Route path="/login" element={<LoginPage setCurrentUser={setCurrentUser} />} />
             </Routes>
         </MainLayout>
       </Router>
