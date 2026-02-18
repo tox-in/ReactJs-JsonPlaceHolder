@@ -18,7 +18,10 @@ const Navbar = ({ isDarkMode, isLoggedIn }) => {
           <LightModeOutlinedIcon className="w-6 h-6 ml-8 text-[#494949]" />
         )}
         {isLoggedIn ? (
-          <IoPersonCircleSharp className="w-6 h-6 ml-8 text-[#494949]" />
+          <div>
+          <Link to="/myPosts" className="font-kaushan ml-2 md:ml-6 lg:ml-8 px-6 py-2 bg-light text-xl text-[#494949] rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center">My Posts</Link>
+          <IoPersonCircleSharp className="w-12 h-12 ml-8 text-[#494949]" />
+          </div>
         ) : (
           <Link to="/login" className="font-kaushan ml-2 md:ml-6 lg:ml-8 px-6 py-2 bg-light text-xl text-[#494949] rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center">
             Login

@@ -10,6 +10,7 @@ import UsersPage from "./pages/UsersPage";
 import PostsPage from "./pages/PostsPage";
 import LoginPage from "./pages/LoginPage";
 import Menu from "./components/Menu";
+import MyPostsPage from "./Data/MyPostsPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from "./components/AuthContext";
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/comments" element={<CommentsPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/photos" element={<PhotosPage />} />
+          <Route path="/myPosts" element={<MyPostsPage />} />
           <Route
             path="/login"
             element={<LoginPage login={login} isLoggedIn={isLoggedIn} />}

@@ -14,3 +14,8 @@ const useFetch = (fetchFunction) => {
 }
 
 export default useFetch
+
+//TODO: 1. Fetch Todos By Current User
+// 2. Refine the Posts UI
+//3. Profile Page UI
+//4. Not Found Page UI
