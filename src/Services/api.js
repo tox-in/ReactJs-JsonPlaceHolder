@@ -35,13 +35,9 @@ export const fetchAlbums = async () => {
 };
 
 export const fetchComments = async () => {
-    const response = await fetch(`${BASE_URL}/comments`);
-    if (!response.ok) {
-        throw new Error('Network response was not ok');
-    }
-    const data = await response.json();
-    console.log(data);
-    return data;
+        const response = await fetch(`${BASE_URL}/comments`);
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
 };
 
 
@@ -59,7 +55,26 @@ export const fetchMyPosts = async (userId) => {
     const response = (await fetch(`${BASE_URL}/posts?userId=${userId}`));
     if (!response.ok) throw new Error('Network response was not ok');
     return response.json();
-}
+};
+
+export const fetchPostById = async (id) => {
+    if (!id || typeof id !== 'number' || id <= 0) {
+        throw new Error('id must be a positive number');
+    }
+
+    const response = (await fetch(`${BASE_URL}/posts/${id}`));
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+};
+
+export const fetchCommentsByPostId = async (postId) => {
+    if (!postId || typeof postId !== 'number' || postId <= 0) {
+        throw new Error('postId must be a positive number');
+    }
+        const response = await fetch(`${BASE_URL}/comments?postId=${postId}`);
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+};
 
 export const createPost = async (postData) => {
     if (!postData || typeof postData !== 'object') {

@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }) => {
   }
 
   if (!currentUser) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/photos" replace />;
   }
   return children;
 };
