@@ -19,7 +19,7 @@ const Todos = () => {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 pb-32">
       <div className="flex gap-4 mb-8">
         {["all", "completed", "pending"].map((type) => (
           <button
