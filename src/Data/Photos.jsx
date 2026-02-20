@@ -7,8 +7,8 @@ const Photos = () => {
 
   if (loading)
     return (
-      <div className="text-center p-10 font-kaushan animate-pulse">
-        Loading Photos...
+      <div className="flex items-center justify-center h-screen bg-gradient-to-br from-slate-50 to-zinc-100">
+        <div className="animate-spin w-8 h-8 border-4 border-accent border-t-transparent rounded-full mx-auto mb-4" />
       </div>
     );
   if (error) return <p className="text-red-700">Error: {error}</p>;
