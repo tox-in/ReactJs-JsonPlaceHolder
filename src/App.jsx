@@ -15,6 +15,7 @@ import CreatePostPage from "./pages/CreatePostPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from "./components/AuthContext";
 import SinglePostPage from "./Data/SinglePostPage";
+import NotFoundPage from './pages/NotFoundPage';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
             path="/login"
             element={<LoginPage login={login} isLoggedIn={isLoggedIn} />}
           />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </MainLayout>
     </Router>
