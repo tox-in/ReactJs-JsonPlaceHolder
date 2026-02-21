@@ -1,9 +1,15 @@
 import React from "react";
 import { fetchTodos } from "../Services/api";
 import useFetch from "./../Hooks/useFetch";
+import { useAuth } from "../components/AuthContext";
 
 const Todos = () => {
-  const { data: todos, loading, error } = useFetch(fetchTodos);
+  const { currentUser } = useAuth();
+  const {
+    data: todos,
+    loading,
+    error,
+  } = useFetch(() => fetchTodos(currentUser.id));
   const [filter, setFilter] = React.useState("all");
 
   if (loading)
@@ -41,7 +47,13 @@ const Todos = () => {
               <span className="text-xs font-bold text-accent uppercase tracking-widest">
                 task #{todo.id}
               </span>
-              <h3 className="mt-2 text-lg font-semibold text[#494949] leading-tight">
+              <h3
+                className={`mt-2 text-lg font-semibold leading-tight transition-all ${
+                  todo.completed
+                    ? "line-through text-gray-400"
+                    : "text-[#494949]"
+                }`}
+              >
                 {todo.title}
               </h3>
             </div>

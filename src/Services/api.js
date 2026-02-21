@@ -16,8 +16,8 @@ export const fetchUserById = async (id) => {
     return user;
 };
 
-export const fetchTodos = async () => {
-    const response = await fetch(`${BASE_URL}/todos`);
+export const fetchTodos = async (userId) => {
+    const response = await fetch(`${BASE_URL}/users/${userId}/todos`);
     if (!response.ok) throw new Error('Network response was not ok');
     return response.json();
 };

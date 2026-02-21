@@ -18,7 +18,7 @@ export default useFetch
 //TODO: 1. Fetch Todos By Current User
 //2. Profile Page UI
 //3. Not Found Page UI
-//4. Read Posts Page UI
+// 4. Read Posts Page UI (Done)
 //5. Update Post Page UI
 //6. Delete Post Functionality
 //7. Refine the Users Page UI(It looks sus)
