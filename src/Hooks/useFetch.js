@@ -14,8 +14,3 @@ const useFetch = (fetchFunction) => {
 }
 
 export default useFetch
-
-//TODO: 2. Profile Page UI
-//5. Update Post Page UI
-//7. Refine the Users Page UI(It looks sus)
-//8. Add the load more or pagination functionality to the Pages
