@@ -16,6 +16,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from "./components/AuthContext";
 import SinglePostPage from "./Data/SinglePostPage";
 import NotFoundPage from './pages/NotFoundPage';
+import UserInfoPage from "./pages/UserInfoPage";
 
 
 function App() {
@@ -45,6 +46,12 @@ function App() {
             path="/post/:id"
             element={
                 <SinglePostPage />
+            }
+          />
+          <Route
+            path="/user/:id"
+            element={
+                <UserInfoPage />
             }
           />
           <Route path="/albums" element={<AlbumsPage />} />
