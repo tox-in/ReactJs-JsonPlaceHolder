@@ -3,8 +3,10 @@ import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import { IoAddOutline } from "react-icons/io5";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { useAuth } from "./AuthContext";
 
 const Navbar = ({ isDarkMode, isLoggedIn }) => {
+  const {currentUser} = useAuth();
   
   return (
     <nav className="w-full h-22 flex items-center justify-between px-6 bg-accent shadow border-solid border-b-1 border-b-amber-700 rounded-b-lg mb-4">
@@ -21,7 +23,9 @@ const Navbar = ({ isDarkMode, isLoggedIn }) => {
           <div className="flex flex-row">
           <Link to="/createPost" className="font-kaushan ml-2 md:ml-6 lg:ml-8 px-6 py-2 bg-light text-xl text-[#494949] rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center"><IoAddOutline className="text-[#494949] w-6 h-6 size-1.5" /> Post</Link>
           <Link to="/myPosts" className="font-kaushan ml-2 md:ml-6 lg:ml-8 px-6 py-2 bg-light text-xl text-[#494949] rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center">My Posts</Link>
+          <Link to={`/user/${currentUser.id}`}>
           <IoPersonCircleSharp className="w-12 h-12 ml-8 text-[#494949]" />
+          </Link>
           </div>
         ) : (
           <Link to="/login" className="font-kaushan ml-2 md:ml-6 lg:ml-8 px-6 py-2 bg-light text-xl text-[#494949] rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 flex items-center justify-center">
