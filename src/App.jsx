@@ -15,13 +15,12 @@ import CreatePostPage from "./pages/CreatePostPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { useAuth } from "./components/AuthContext";
 import SinglePostPage from "./Data/SinglePostPage";
-import NotFoundPage from './pages/NotFoundPage';
+import NotFoundPage from "./pages/NotFoundPage";
 import UserInfoPage from "./pages/UserInfoPage";
-
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const {currentUser, login, logout, setCurrentUser} = useAuth();
+  const { currentUser, login, logout, setCurrentUser } = useAuth();
   const isLoggedIn = !!currentUser;
 
   return (
@@ -34,24 +33,21 @@ function App() {
         <Menu />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route
-            path="/posts"
-            element={
-              <ProtectedRoute currentUser={currentUser}>
-                <PostsPage />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/posts" element={<PostsPage />} />
           <Route
             path="/post/:id"
             element={
+              <ProtectedRoute>
                 <SinglePostPage />
+              </ProtectedRoute>
             }
           />
           <Route
             path="/user/:id"
             element={
+              <ProtectedRoute>
                 <UserInfoPage />
+              </ProtectedRoute>
             }
           />
           <Route path="/albums" element={<AlbumsPage />} />

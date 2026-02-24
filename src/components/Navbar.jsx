@@ -10,7 +10,7 @@ const Navbar = ({ isDarkMode, isLoggedIn }) => {
   
   return (
     <nav className="w-full h-22 flex items-center justify-between px-6 bg-accent shadow border-solid border-b-1 border-b-amber-700 rounded-b-lg mb-4">
-      <Link to="/">
+      <Link to="/posts">
         <h1 className="font-bold text-[#494949] text-md md:text-lg lg:text-xl">Json Placeholder</h1>
       </Link>
       <div className="flex items-center gap-6 pr-4 md:pr-16 lg:pr-24">
