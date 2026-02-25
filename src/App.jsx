@@ -32,7 +32,7 @@ function App() {
       >
         <Menu />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<PhotosPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route
             path="/post/:id"
